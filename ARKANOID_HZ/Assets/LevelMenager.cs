@@ -1,25 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 public class LevelMenager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
         
+    }
+    
+    public void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void LoadStartMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene("Lose");
             
-     }
+    }
 
-    // Update is called once per frame
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+   
     void Update()
     {
         
