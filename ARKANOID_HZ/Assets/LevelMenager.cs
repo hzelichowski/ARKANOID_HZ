@@ -42,7 +42,6 @@ public class LevelMenager : MonoBehaviour
     void Update()
     {
         
-        
 
     }
 }
